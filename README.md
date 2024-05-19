@@ -6,6 +6,10 @@ A starter template for [LazyVim](https://github.com/LazyVim/LazyVim) at Rekovar.
 
 ## Requirements 
 Has the same basic requirements as Lazyvim
+Also install cargo, nodejs/npm, and python3-venv
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+`nix-env -iA nixpkgs.nodejs_21`
+`sudo apt install -y python3-venv`
 
 ## Make a backup of your current Neovim files:
 ```
