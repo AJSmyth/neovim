@@ -1,7 +1,5 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim) at Rekovar. 
-
 # Install
 
 ## Requirements 
