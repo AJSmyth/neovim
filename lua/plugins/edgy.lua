@@ -3,11 +3,11 @@ return {
         "folke/edgy.nvim",
         optional = true,
         opts = function(_, opts)
-            opts.right = opts.right or {}
-            table.insert(opts.right, {
+            opts.bottom = opts.bottom or {}
+            table.insert(opts.bottom, {
                 ft = "copilot-chat",
                 title = "Copilot Chat",
-                size = { width = 50 },
+                size = { height = 50 },
             })
         end,
     },

@@ -1,5 +1,4 @@
 return {
-    { "fang2hou/blink-copilot" },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
