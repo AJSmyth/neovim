@@ -43,6 +43,16 @@ require("which-key").add({
     { "<leader>t", group = "Translate" },
 })
 
+vim.keymap.set("n", "<leader>yc", function()
+    local path = vim.api.nvim_buf_get_name(0)
+    vim.fn.setreg("+", path)
+    vim.notify("Yanked file path:\n" .. path)
+end, { desc = "Yank current buffer file path" })
+
+vim.keymap.set("n", "[c", function()
+    require("treesitter-context").go_to_context(vim.v.count1)
+end, { silent = true, desc = "Go to previous context" })
+
 --[[
 require("which-key").add({
     { "<leader>o", group = "Obsidian" },
