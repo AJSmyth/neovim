@@ -19,7 +19,7 @@ return {
         },
         keys = {
             {
-                "<leader>gg",
+                "<leader>gG",
                 function()
                     local uv = vim.uv or vim.loop
                     local cwd = uv.cwd()
@@ -77,7 +77,7 @@ return {
                 desc = "Lazygit (Project)",
             },
             {
-                "<leader>gG",
+                "<leader>gg",
                 function()
                     local ok, snacks = pcall(require, "snacks")
                     if not ok or not snacks.lazygit then
