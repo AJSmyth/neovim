@@ -8,13 +8,12 @@ return {
                     hidden = true,
                     follow_file = true,
                     ignored = true,
-                    git_untracked = false,
-                    git_status_open = true,
                 },
                 sources = {
                     files = {
                         ignored = true,
                         hidden = true,
+                        exclude = { "compile_commands.json", "tags", "tags.lock", ".cache" },
                     },
                 },
                 grep = {
