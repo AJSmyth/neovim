@@ -4,6 +4,7 @@ return {
         version = false, -- latest
         dependencies = { "nvim-lua/plenary.nvim" },
         cmd = { "CopilotChat", "CopilotChatToggle" },
+
         opts = function()
             local icons = {
                 ui = {
@@ -21,6 +22,7 @@ return {
                 chat_autocomplete = false,
                 auto_fold = true,
                 show_help = false,
+                highlight_headers = true, -- disable header highlighting
                 headers = {
                     user = icons.ui.User,
                     assistant = icons.ui.Bot,
@@ -44,7 +46,6 @@ return {
         config = function(_, opts)
             local chat = require("CopilotChat")
             chat.setup(opts)
-            pcall(require, "config.copilot_extensions") -- optional extra providers/functions
             -- chat buffer UI tweaks
             vim.api.nvim_create_autocmd("BufEnter", {
                 pattern = "copilot-*",
@@ -52,7 +53,7 @@ return {
                     vim.opt_local.relativenumber = false
                     vim.opt_local.number = false
                     vim.opt_local.signcolumn = "no"
-                    vim.opt_local.conceallevel = 2
+                    --vim.opt_local.conceallevel = 2
                 end,
             })
             -- which-key group (if which-key present)

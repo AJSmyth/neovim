@@ -74,18 +74,3 @@ vim.api.nvim_create_autocmd("FileType", {
         }
     end,
 })
-
--- Auto-command to customize chat buffer behavior
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "copilot-*",
-    callback = function()
-        vim.opt_local.relativenumber = false
-        vim.opt_local.number = false
-        vim.opt_local.conceallevel = 0
-    end,
-})
-
--- Load code block highlight adjustments (simple module, not a plugin spec)
-pcall(require, "config.codeblock_highlight")
--- Enhanced Copilot Chat code fence rendering
-pcall(require, "config.copilot_codeblock")
