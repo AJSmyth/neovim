@@ -3,6 +3,7 @@ return {
         "folke/snacks.nvim",
         opts = {
             picker = {
+                hidden = true,
                 explorer = {
                     hidden = true,
                     follow_file = true,
@@ -10,10 +11,17 @@ return {
                     git_untracked = false,
                     git_status_open = true,
                 },
-                files = {
-                    ignored = true,
-                    exclude = { "compile_commands.json", "tags", "tags.lock" },
-                    hidden = true,
+                sources = {
+                    files = {
+                        ignored = true,
+                        hidden = true,
+                    },
+                },
+                grep = {
+                    files = {
+                        ignored = true,
+                        hidden = true,
+                    },
                 },
             },
         },
