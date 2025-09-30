@@ -1,4 +1,23 @@
 return {
+    {
+        "lukas-reineke/headlines.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {
+            markdown = {
+                headline_highlights = {
+                    "Headline1",
+                    "Headline2",
+                    "Headline3",
+                    "Headline4",
+                    "Headline5",
+                    "Headline6",
+                },
+                codeblock_highlight = "CodeBlock",
+                dash_highlight = "Dash",
+                quote_highlight = "Quote",
+            },
+        },
+    },
     -- Full markdown rendering for markdown files
     {
         "MeanderingProgrammer/render-markdown.nvim",
@@ -30,6 +49,7 @@ return {
         ft = { "copilot-chat" },
         opts = function()
             return {
+                change_events = { "ModeChanged" },
                 render_modes = true,
                 debounce = 100,
                 anti_conceal = {
@@ -45,13 +65,28 @@ return {
                     style = "full",
                     language = true,
                     language_icon = true,
-                    language_name = false,
+                    language_name = true,
                     language_info = true,
                     conceal_delimiters = true,
                     border = "thick",
+                    left_pad = 2,
                 },
                 heading = {
-                    enabled = false,
+                    sign = true,
+                    icons = { " " },
+                    position = "inline",
+                    width = "full",
+                    left_margin = 0.5,
+                    left_pad = 0.5,
+                    right_pad = 0.5,
+                    backgrounds = {
+                        "Headline3",
+                        "Headline4",
+                        "Headline3",
+                        "Headline2",
+                        "Headline1",
+                        "Headline6",
+                    },
                 },
             }
         end,

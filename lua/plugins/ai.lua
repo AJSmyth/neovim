@@ -8,21 +8,23 @@ return {
         opts = function()
             local icons = {
                 ui = {
-                    User = " ",
-                    Bot = "󱚤 ",
-                    Tool = " ",
+                    User = " User",
+                    Bot = "󱚤 Bot",
+                    Tool = " Tool",
                 },
             }
             return {
-                model = "gpt-5", -- default model (can change with <leader>am)
+                model = "gpt-5",
                 debug = false,
                 temperature = 0,
-                sticky = { "#buffers" },
+                sticky = { "#buffers", "@copilot", "@neovim", "@mcphub" },
                 diff = "block",
                 chat_autocomplete = false,
-                auto_fold = true,
+                separator = ":",
                 show_help = false,
-                highlight_headers = true, -- disable header highlighting
+                highlight_headers = false, -- disable header highlighting so we can use render-markdown instead
+                stop_on_function_failure = true,
+                insert_at_end = true,
                 headers = {
                     user = icons.ui.User,
                     assistant = icons.ui.Bot,
@@ -53,7 +55,7 @@ return {
                     vim.opt_local.relativenumber = false
                     vim.opt_local.number = false
                     vim.opt_local.signcolumn = "no"
-                    --vim.opt_local.conceallevel = 2
+                    vim.opt_local.conceallevel = 2
                 end,
             })
             -- which-key group (if which-key present)

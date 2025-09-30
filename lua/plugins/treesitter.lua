@@ -39,6 +39,7 @@ return {
                 "python",
                 "json",
                 "diff", -- icons & disable background logic
+                "rust",
             }) do
                 add(lang)
             end

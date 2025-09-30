@@ -1,12 +1,13 @@
+vim.g.nord_borders = false
 return {
-  -- add gruvbox
-  { "shaunsingh/nord.nvim" },
-
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nord",
+    -- add gruvbox
+    {
+        "shaunsingh/nord.nvim",
     },
-  }
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "nord",
+        },
+    },
 }
