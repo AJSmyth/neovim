@@ -20,3 +20,5 @@ vim.api.nvim_set_hl(0, "CustomInactive", inactive_hl)
 for _, name in ipairs(link_to_inactive) do
     vim.api.nvim_set_hl(0, name, { link = "CustomInactive" })
 end
+
+vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#333a47" })
