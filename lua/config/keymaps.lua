@@ -67,3 +67,8 @@ vim.keymap.set("n", "<leader>oo", function()
     vim.cmd("cd /mnt/c/Users/aj.smyth/Documents/obsidian/tp-link")
 end, { desc = "Open Obsidian Vault" })
 ]]
+
+-- Make Bufferline Keymaps Make Sense
+vim.keymap.del("n", "<leader>br")
+vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left" })
+vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Delete Buffers to the Right" })

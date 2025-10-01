@@ -4,6 +4,7 @@ return {
         opts = {
             picker = {
                 hidden = true,
+                ignored = true,
                 explorer = {
                     hidden = true,
                     follow_file = true,

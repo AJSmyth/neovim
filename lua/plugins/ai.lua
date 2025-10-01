@@ -17,7 +17,7 @@ return {
                 model = "gpt-5",
                 debug = false,
                 temperature = 0,
-                sticky = { "#buffers", "@copilot", "@neovim", "@mcphub" },
+                sticky = { "#buffers", "@copilot", "@neovim", "@mcphub", "@atlassian" },
                 diff = "block",
                 chat_autocomplete = false,
                 separator = ":",
