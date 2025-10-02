@@ -100,5 +100,6 @@ function M.start()
     -- If not found, open a new tab with today's daily note and set tab-local cwd.
     vim.cmd("tabnew " .. vault .. "/Daily/" .. get_daily())
     vim.cmd("tcd " .. vault)
+    require("snacks.explorer").open()
 end
 return M

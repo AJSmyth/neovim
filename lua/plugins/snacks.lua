@@ -1,3 +1,4 @@
+-- TODO: convert to telescope
 return {
     {
         "folke/snacks.nvim",
