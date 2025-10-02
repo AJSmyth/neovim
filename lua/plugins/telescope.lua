@@ -20,6 +20,8 @@ local grep_args = {
     "!nvmp/staging_dir/*",
     "-g",
     "!nvmp/bin/*",
+    "-g",
+    "!doc/*",
 }
 return {
     "nvim-telescope/telescope.nvim",
@@ -97,6 +99,7 @@ return {
                     ["<c-s>"] = flash,
                     ["<M-q>"] = actions.send_to_qflist + actions.open_qflist,
                     ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                    ["<C-c>"] = actions.close,
                 },
             },
             --todo: add mapping for switching between cwd and buffer dir

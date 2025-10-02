@@ -30,11 +30,11 @@ local nord = {
 
 Customized highlights are located in the `lua/config/highlights.lua` file.
 
-# Telescope
+## Telescope
 
-## Keybinds
+### Keybinds
 
-### Live Grep & Find Files
+#### Live Grep & Find Files
 
 | Keybind | Action | Custom|
 |--|--|--|
@@ -45,3 +45,14 @@ Customized highlights are located in the `lua/config/highlights.lua` file.
 |`<leader>gG` | Live Grep (current buffer dir)| 🔃|
 |`<leader>ff` | Find Files(cwd)| 🔃|
 |`<leader>fF` | Find Files (current buffer dir)| 🔃|
+|`:ccl` | Close quickfix list | ❌|
+
+## Obsidian
+
+- Bufferline is used to filter out obsidian notes when the tab cwd isn't the vault root. When the tab cwd is the vault root, only obsidian notes are shown in the bufferline.
+
+### Keybinds
+
+| Keybind | Action | Custom|
+|--|--|--|
+| `<leader><Tab><Tab>` | Open/switch to Obsidian Tab. | ✅|

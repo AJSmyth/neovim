@@ -8,15 +8,26 @@ return {
                 render_modes = true,
                 heading = {
                     sign = true,
-                    width = "full",
+                    width = "block",
+                    min_width = 100,
+                    left_pad = 1,
+                    border = true,
+                    border_virtual = true,
                     backgrounds = {
+                        "Headline1",
+                        "Headline2",
                         "Headline3",
                         "Headline4",
-                        "Headline3",
-                        "Headline2",
-                        "Headline1",
+                        "Headline5",
                         "Headline6",
                     },
+                },
+                bullet = {
+                    icons = { "•", "◦", "▪", "▫", "⁃", "◉", "○", "◆", "◇", "▶", "▷" },
+                    right_pad = 5,
+                },
+                checkbox = {
+                    right_pad = 5,
                 },
                 code = {
                     width = "full",
@@ -64,7 +75,7 @@ return {
                                 backgrounds = {
                                     "Headline3",
                                     "Headline4",
-                                    "Headline3",
+                                    "Headline5",
                                     "Headline2",
                                     "Headline1",
                                     "Headline6",

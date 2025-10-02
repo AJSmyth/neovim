@@ -21,25 +21,13 @@ return {
         },
     },
     {
-        "epwalsh/obsidian.nvim",
-        version = "*",
-        lazy = true,
-        ft = "markdown",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        opts = {
-            disable_frontmatter = true,
-            workspaces = {
-                {
-                    name = "tp-link",
-                    path = "/mnt/c/Users/aj.smyth/Documents/obsidian/tp-link/",
-                },
-            },
-        },
-    },
-    {
         "nvim-telescope/telescope-ui-select.nvim",
     },
-    { "akinsho/bufferline.nvim" },
+    -- my sanity has returned 😌
+    {
+        "nvim-mini/mini.pairs",
+        config = function(_, _)
+            return { opts = { modes = false } }
+        end,
+    },
 }
