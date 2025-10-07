@@ -22,6 +22,8 @@ local grep_args = {
     "!nvmp/bin/*",
     "-g",
     "!doc/*",
+    "-g",
+    "!out/*",
 }
 return {
     "nvim-telescope/telescope.nvim",
@@ -33,6 +35,16 @@ return {
         },
     },
     keys = {
+        {
+            "gr",
+            function()
+                local opts = {
+                    file_ignore_patterns = { "%.c" },
+                }
+                builtin.lsp_references(opts)
+            end,
+            desc = "grep",
+        },
         {
             "<leader>sg",
             function()
@@ -111,6 +123,9 @@ return {
                 },
                 live_grep = {
                     path_display = { "smart" },
+                },
+                defaults = {
+                    file_ignore_patterns = { "%.c" },
                 },
             },
         })

@@ -24,7 +24,6 @@ return {
                 show_help = false,
                 highlight_headers = false, -- disable header highlighting so we can use render-markdown instead
                 stop_on_function_failure = true,
-                insert_at_end = true,
                 window = {
                     width = 0.3,
                 },

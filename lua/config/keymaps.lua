@@ -31,21 +31,7 @@ vim.keymap.del("n", "<leader>br")
 vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left" })
 vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Delete Buffers to the Right" })
 
--- Markdown: Toggle checkbox (- [ ] <-> - [x]) on current line
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "markdown",
-    callback = function(args)
-        vim.keymap.set("n", "<Tab>", function()
-            local line = vim.api.nvim_get_current_line()
-            local new
-            if line:match("^%s*%- %[%s%]%s") or line:match("^%s*%- %[%s%]$") then
-                new = line:gsub("%- %[%s%]", "- [x]", 1)
-            elseif line:match("^%s*%- %[[xX]%]%s") or line:match("^%s*%- %[[xX]%]$") then
-                new = line:gsub("%- %[[xX]%]", "- [ ]", 1)
-            else
-                return
-            end
-            vim.api.nvim_set_current_line(new)
-        end, { buffer = args.buf, desc = "Toggle Checkbox" })
-    end,
-})
+
+-- Custom Copilot Keymaps
+vim.keymap.set("n", "<leader>ab", "<cmd>Copilot disable<CR>", { desc = "Copilot: disable" })
+vim.keymap.set("n", "<leader>aB", "<cmd>Copilot enable<CR>", { desc = "Copilot: enable" })

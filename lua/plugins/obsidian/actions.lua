@@ -45,6 +45,7 @@ function M.bufferline_filter(bufnr)
     end
 end
 
+-- TODO: add functionality to restore the previous obsidian session in addition to loading daily note
 function M.start()
     local vault = M.get_vault_dir()
     local target = vim.loop.fs_realpath(vault)
