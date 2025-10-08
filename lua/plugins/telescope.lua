@@ -36,16 +36,6 @@ return {
     },
     keys = {
         {
-            "gr",
-            function()
-                local opts = {
-                    file_ignore_patterns = { "%.c" },
-                }
-                builtin.lsp_references(opts)
-            end,
-            desc = "grep",
-        },
-        {
             "<leader>sg",
             function()
                 builtin.live_grep({ prompt_title = "Live Grep (cwd)", additional_args = grep_args })
@@ -80,6 +70,7 @@ return {
     opts = function(_, opts)
         local actions = require("telescope.actions")
         if not LazyVim.has("flash.nvim") then
+            print("Doesn't have flash.nvim!")
             return
         end
         local function flash(prompt_bufnr)
@@ -114,20 +105,20 @@ return {
                     ["<C-c>"] = actions.close,
                 },
             },
+            --file_ignore_patterns = { "^nvmp/build_dir" },
             --todo: add mapping for switching between cwd and buffer dir
         })
-        opts.pickers = vim.tbl_deep_extend("force", opts.pickers or {}, {
-            pickers = {
-                find_files = {
-                    path_display = { "smart" },
-                },
-                live_grep = {
-                    path_display = { "smart" },
-                },
-                defaults = {
-                    file_ignore_patterns = { "%.c" },
-                },
+        opts.pickers = {
+            find_files = {
+                path_display = { "filename_first" },
             },
-        })
+            live_grep = {
+                path_display = { "filename_first" },
+            },
+            lsp_references = {
+                path_display = { "filename_first" },
+                file_ignore_patterns = { ".*/nvmp/build_dir" },
+            },
+        }
     end,
 }
