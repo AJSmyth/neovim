@@ -16,7 +16,14 @@ return {
                     end
                 end,
             }):map("<leader>ut")
-            return { mode = "cursor", max_lines = 6, separator = "─" }
+            return {
+                mode = "cursor",
+                max_lines = 0,
+                max_window_height = 0,
+                line_numbers = false,
+                trim_scope = "inner",
+                --separator = "─",
+            }
         end,
     },
 
@@ -43,6 +50,9 @@ return {
             }) do
                 add(lang)
             end
+            opts.indent = {
+                enable = false,
+            }
         end,
     },
 }

@@ -22,3 +22,4 @@ for _, name in ipairs(link_to_inactive) do
 end
 
 vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#333a47" })
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#434c5e" })

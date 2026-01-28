@@ -23,11 +23,14 @@ return {
     {
         "nvim-telescope/telescope-ui-select.nvim",
     },
-    -- my sanity has returned 😌
     {
         "nvim-mini/mini.pairs",
         config = function(_, _)
             return { opts = { modes = false } }
         end,
+    },
+    {
+        "tpope/vim-sleuth",
+        event = { "BufReadPre", "BufNewFile" },
     },
 }

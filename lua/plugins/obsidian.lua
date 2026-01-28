@@ -24,7 +24,7 @@ return {
             },
             mappings = {
                 -- Toggle check-boxes.
-                ["<Tab>"] = {
+                ["<C-l>"] = {
                     action = function()
                         return require("obsidian").util.toggle_checkbox()
                     end,

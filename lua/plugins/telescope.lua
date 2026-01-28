@@ -24,6 +24,8 @@ local grep_args = {
     "!doc/*",
     "-g",
     "!out/*",
+    "-g",
+    "!compile_commands.json",
 }
 return {
     "nvim-telescope/telescope.nvim",
