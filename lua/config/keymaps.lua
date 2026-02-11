@@ -8,7 +8,7 @@ require("which-key").add({
 })
 vim.keymap.set("n", "<leader>tc", "<cmd>Translate --comment<CR>", { desc = "Translate Comment" })
 vim.keymap.set("n", "<leader>tt", "<cmd>Translate<CR>", { desc = "Auto Translate" })
-vim.keymap.set("v", "<leader>tt", "<cmd>normal! mz<CR><cmd>'<,'>Translate<CR><cmd>normal! `z<CR><cmd>delmarks z<CR>")
+vim.keymap.set("v", "<leader>tt", "<cmd>'<,'>Translate<CR>", { desc = "Auto Translate" })
 
 vim.keymap.set({ "n", "v", "i", "c", "t" }, "<C-b>", "<Nop>", { noremap = true, silent = true })
 
