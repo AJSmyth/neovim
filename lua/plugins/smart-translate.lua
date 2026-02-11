@@ -3,18 +3,24 @@ return {
         "askfiy/smart-translate.nvim",
         cmd = { "Translate" },
         dependencies = {
-            "askfiy/http.nvim", -- a wrapper implementation of the Python aiohttp library that uses CURL to send requests.
+            "askfiy/http.nvim",
         },
         config = function()
             require("smart-translate").setup({
                 default = {
                     cmds = {
-                        source = "zh-CN", -- FROM Chinese
-                        target = "en", -- TO English
+                        source = "zh-CN",
+                        target = "en",
                         handle = "float",
-                        engine = "google",
+                        engine = "deepl",
                     },
                     cache = true,
+                    engine = {
+                        deepl = {
+                            api_key = "$DEEPL_API_KEY",
+                            base_url = "https://api-free.deepl.com/v2/translate",
+                        },
+                    },
                 },
             })
         end,

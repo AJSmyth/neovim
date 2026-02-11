@@ -8,6 +8,7 @@ require("which-key").add({
 })
 vim.keymap.set("n", "<leader>tc", "<cmd>Translate --comment<CR>", { desc = "Translate Comment" })
 vim.keymap.set("n", "<leader>tt", "<cmd>Translate<CR>", { desc = "Auto Translate" })
+vim.keymap.set("v", "<leader>tt", "<cmd>normal! mz<CR><cmd>'<,'>Translate<CR><cmd>normal! `z<CR><cmd>delmarks z<CR>")
 
 vim.keymap.set({ "n", "v", "i", "c", "t" }, "<C-b>", "<Nop>", { noremap = true, silent = true })
 
@@ -30,7 +31,6 @@ end, { desc = "Open Obsidian Vault" })
 vim.keymap.del("n", "<leader>br")
 vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left" })
 vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Delete Buffers to the Right" })
-
 
 -- Custom Copilot Keymaps
 vim.keymap.set("n", "<leader>ab", "<cmd>Copilot disable<CR>", { desc = "Copilot: disable" })

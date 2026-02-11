@@ -11,6 +11,9 @@ return {
                 },
             },
         },
+        setup = function()
+            vim.lsp.log.set_level(vim.log.levels.OFF)
+        end,
     },
     -- { "HiPhish/rainbow-delimiters.nvim", },
 }
